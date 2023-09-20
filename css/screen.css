@@ -2,6 +2,19 @@
  # SETTINGS
 /*---------------------------------------*/
 
+@font-face {
+  font-family: 'Inter Web';
+  src: url(/fonts/Inter-Regular.woff2) format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Inter Web';
+  src: url(/fonts/Inter-SemiBold.woff2) format('woff2');
+  font-weight: 600;
+}
+
+
 :root {
   /* CSS variables here */
 }
@@ -38,12 +51,13 @@ img {
 html {
   font-size: 100%;
   line-height: 1.5;
-  font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
-  color: #171b1c;
+  font-family: "Inter Web", sans-serif;
+  color: #20223a;
   scroll-behavior: smooth;
   /* anti aliasing */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #F5F6FA;
 }
 
 /*
@@ -51,7 +65,7 @@ html {
 */
 
 ::selection {
-  background: #00b2ff;
+  background: #3385FF;
   color: white;
 }
 
@@ -66,6 +80,7 @@ h1 {
   font-weight: 700;
   line-height: 2rem;
   margin-bottom: 1.5rem;
+
 }
 
 h2 {
@@ -133,20 +148,25 @@ hr {
 }
 
 a {
-  color: #008fcc;
+  color: #3385FF;
   transition: all 0.1s ease-in-out;
 }
 
 a:visited {
-  color: #008fcc;
+  color: #3385FF;
 }
 
 a:hover {
-  color: #00b2ff;
+  color: #4F95FF;
 }
 
 a:active {
-  color: #006b99;
+  color: #1B4186;
+}
+
+input,
+label {
+  display: block;
 }
 
 /*---------------------------------------/*
@@ -289,14 +309,123 @@ a:active {
   align-content: space-between;
 }
 
+/*
+ Object: Button reset
+ ---
+ Small button reset object
+*/
+
+.o-button-reset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+ 
+ /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+ 
+ /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+ 
+ /* Corrects font smoothing for webkit */
+ -webkit-font-smoothing: inherit;
+ -moz-osx-font-smoothing: inherit;
+ 
+ /* Corrects inability to style clickable `input` types in iOS */
+ -webkit-appearance: none;
+ }
+
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
 /*
-    Component: Component name
+    Component: Logo
     ---
     Component description
 */
+
+.c-logo {
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.c-logo__symbol {
+  height: 100%;
+  display: block;
+}
+
+.c-logo__path--1 {
+  fill: #20223A;
+}
+.c-logo__path--2 {
+  fill: #3385FF;
+}
+.c-logo__path--3 {
+  fill: #1B4186;
+}
+
+/*
+    Component: form
+    ---
+    Component description
+*/
+
+.c-form-field--option {
+  display: flex;
+  gap: 1rem;
+}
+
+.c-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  border: 1px solid #E2E3E7;
+  border-radius: 3px;
+  color: inherit;
+  /* font-size: 1rem;
+  font-family: inherit; */
+  font: inherit;
+  line-height: 1.5rem;
+
+  padding: calc(0.75rem - 1px) 1rem;
+
+  outline: none;
+}
+
+.c-input:focus {
+  box-shadow: h-offset v-offset blur spread color;
+  box-shadow: 0 0 0 3px #3385ff4d; 
+}
+
+.c-button {
+  font-size: 1rem;
+  font-weight: 700;
+  border: #2E77E6;
+  border-radius: 3px;
+  color: white;
+  background-color: #3385FF;
+  padding: calc(0.875rem - 1px) 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+}
+
+.c-button:hover {
+  background-color: #4F95FF;
+}
+
+.c-button:active {
+  background-color: #2E77E6;
+}
+
+.c-button:focus {
+  background-color: #3385FF;
+ /* HIER */
+}
 
 /*---------------------------------------/*
  # UTILITIES
